@@ -1,0 +1,164 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions: [c]
+scope: source.c
+contexts:
+  main:
+    # # Strings begin and end with quotes, and use backslashes as an escape
+    # # character
+    # - match: '"'
+    #   scope: punctuation.definition.string.begin.example-c
+    #   push: double_quoted_string
+
+    # Comments begin with a '//' and finish at the end of the line
+    # - match: '//'
+    #   scope: punctuation.definition.comment.example-c
+    #   push: line_comment
+
+    # - match: ':'
+    #   scope: dyl7
+    #   push: line_comment2
+    
+    # - match: '(?=):'
+    #   scope: dyl7
+    #   push: line_comment2
+
+    # - match: ':'
+    #   scope: dyl3
+    - match: '/+'
+      scope: dylLine
+      push: line_commentLine
+
+    - match: '^[\S ][^/$]*'
+      scope: dyl0
+      push: line_comment0
+
+    - match: '^\t{1}[\S ][^/$]*'
+      scope: dyl1
+      push: line_comment0
+
+    - match: '^\t{2}[\S ][^/$]*'
+      scope: dyl0
+      push: line_comment0
+
+    - match: '^\t{3}[\S ][^/$]*'
+      scope: dyl1
+      push: line_comment0
+
+    - match: '^\t{4}[\S ][^/$]*'
+      scope: dyl0
+      push: line_comment0
+
+    - match: '^\t{5}[\S ][^/$]*'
+      scope: dyl1
+      push: line_comment0
+
+    - match: '^\t{6}[\S ][^/$]*'
+      scope: dyl0
+      push: line_comment0
+
+    - match: '^\t{7}[\S ][^/$]*'
+      scope: dyl1
+      push: line_comment0
+
+    # - match: '^\t{1}(?!//)[\S ]+?($|(?=//)|(?=:))'
+    #   scope: dyl1
+    #   push: line_comment1
+
+    # - match: '^\t{2}(?!//)[\S ]+?($|(?=//)|(?=:))'
+    #   scope: dyl2
+    #   push: line_comment2
+
+    # - match: '^\t{3}(?!//)[\S ]+?($|(?=//)|(?=:))'
+    #   scope: dyl3
+    #   push: line_comment3
+
+    # - match: '^\t{4}(?!//)[\S ]+?($|(?=//)|(?=:))'
+    #   scope: dyl4
+    #   push: line_comment4
+
+    # - match: '^\t{5}(?!//)[\S ]+?($|(?=//)|(?=:))'
+    #   scope: dyl5
+    #   push: line_comment5
+
+    # - match: '^\t{6}(?!//)[\S ]+?($|(?=//)|(?=:))'
+    #   scope: dyl6
+    #   push: line_comment6
+
+    # - match: '^\t{7}(?!//)[\S ]+?($|(?=//)|(?=:))'
+    #   scope: dyl7
+    #   push: line_comment7
+
+
+
+  #   # Keywords are if, else for and while.
+  #   # Note that blackslashes don't need to be escaped within single quoted
+  #   # strings in YAML. When using single quoted strings, only single quotes
+  #   # need to be escaped: this is done by using two single quotes next to each
+  #   # other.
+  #   - match: '\b(if|else|for|while)\b'
+  #     scope: keyword.control.c
+
+  #   # Numbers
+  #   - match: '\b(-)?[0-9.]+\b'
+  #     scope: constant.numeric.example-c
+
+  # double_quoted_string:
+  #   - meta_scope: string.quoted.double.example-c
+  #   - match: '\\.'
+  #     scope: constant.character.escape.example-c
+  #   - match: '"'
+  #     scope: punctuation.definition.string.end.example-c
+  #     pop: true
+
+  # line_comment:
+  #   - meta_scope: comment.line.example-c
+  #   - match: $
+  #     pop: true
+
+  line_commentLine:
+    - meta_scope: hdylLine
+    - match: '[\S\t ]*$'
+      scope: dylHjm
+      pop: true
+
+  line_comment0:
+    - meta_scope: hdyl0
+    - match: '(?=/|$)'
+      pop: true
+
+  line_comment1:
+    - meta_scope: hdyl1
+    - match: $
+      pop: true
+
+  line_comment2:
+    - meta_scope: hdyl2
+    - match: $
+      pop: true
+
+  line_comment3:
+    - meta_scope: hdyl3
+    - match: $
+      pop: true
+
+  line_comment4:
+    - meta_scope: hdyl4
+    - match: $
+      pop: true
+
+  line_comment5:
+    - meta_scope: hdyl5
+    - match: $
+      pop: true
+
+  line_comment6:
+    - meta_scope: hdyl6
+    - match: $
+      pop: true
+
+  line_comment7:
+    - meta_scope: hdyl7
+    - match: $
+      pop: true

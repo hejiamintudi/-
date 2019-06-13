@@ -1,0 +1,7 @@
+{
+  "name": "dyl-main",
+  "version": "0.0.1",
+  "description": "主逻辑",
+  "author": "dyl",
+  "main": "main.js"
+}
